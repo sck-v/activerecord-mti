@@ -66,8 +66,7 @@ module ActiveRecord::Mti
               :as => mti_base_name.to_sym,
               :autosave => true,
               :dependent => :destroy,
-              :validate => true,
-              :inverse_of => mti_base_name.to_sym
+              :validate => true
 
       # When calling the base object from the implementation
       # switch the base's class to the "base instance mode"
