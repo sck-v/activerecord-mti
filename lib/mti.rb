@@ -96,7 +96,7 @@ module ActiveRecord::Mti
 
       # Delegate associations
       mti_base.reflections.keys
-              .tap { |k| k.delete(mti_base_name.to_sym) }
+              .tap { |k| k.delete(mti_base_name.to_sym); k.delete(mti_base_name.to_s) }
               .each do |association|
         delegate association, "#{association}=",
                  :to => mti_base_name.to_sym
