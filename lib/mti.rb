@@ -28,9 +28,6 @@ module ActiveRecord::Mti
       class_attribute :mti_name
       self.mti_name = self.to_s.underscore.to_sym
 
-      # Always fetch with the implementation
-      default_scope lambda { includes(mti_name) }
-
       # Implementation model association
       belongs_to mti_name,
                  polymorphic: true,
